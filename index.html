@@ -56,13 +56,15 @@ device-orientation-permission-ui="enabled: true"
 <video
 id="movie"
 src="./butsumetsu2.mp4"
+
+preload="auto"
+
 autoplay
 loop
 muted
 playsinline
 webkit-playsinline
 crossorigin="anonymous">
-
 </video>
 
 </a-assets>
@@ -135,6 +137,8 @@ window.addEventListener("DOMContentLoaded", () => {
   } catch (e) {
     console.log(e);
   }
+
+});
 
 });
 
