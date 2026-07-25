@@ -124,22 +124,17 @@ window.addEventListener("DOMContentLoaded", () => {
   const target = document.querySelector("[mindar-image-target]");
 
   // 👀 作品を見つけた！
-  target.addEventListener("targetFound", () => {
+ target.addEventListener("targetFound", async () => {
 
-    console.log("作品を認識しました");
+  console.log("作品を認識しました");
 
-    movie.play();
+  movie.currentTime = 0;
 
-  });
-
-  // 🙈 作品を見失った！
-  target.addEventListener("targetLost", () => {
-
-    console.log("作品を見失いました");
-
-    movie.pause();
-
-  });
+  try {
+    await movie.play();
+  } catch (e) {
+    console.log(e);
+  }
 
 });
 
